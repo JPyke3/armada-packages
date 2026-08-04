@@ -40,6 +40,12 @@ jobs:
       IMAGE: ghcr.io/${{ github.repository_owner }}/armada-packages/${{ inputs.package }}
       CCACHE_DIR: ${{ github.workspace }}/.ccache
     steps:
+      - name: Set image name
+        run: |
+          owner="${GITHUB_REPOSITORY_OWNER,,}"
+          echo "IMAGE=ghcr.io/${owner}/armada-packages/${{ inputs.package }}" \
+            >> "${GITHUB_ENV}"
+
       - uses: actions/checkout@v4
 
       - name: Tooling
