@@ -1,7 +1,7 @@
 name: kwin
 on:
   push:
-    branches: [main]
+    branches: [main, pr-22]
     paths: ['kwin/**', 'oci/**', '.github/workflows/kwin.yml', '.github/workflows/_package-image.yml', 'toolchain.env']
   workflow_dispatch:
 permissions:
