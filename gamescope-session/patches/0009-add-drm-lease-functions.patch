@@ -1,14 +1,14 @@
-From 9acb771798c8efc2177425bd9b1ad6b52a1dce6a Mon Sep 17 00:00:00 2001
+From c02ac14361022d79960de96afcbab08a6511267b Mon Sep 17 00:00:00 2001
 From: Radical <radical@radical.fun>
-Date: Wed, 5 Aug 2026 18:21:18 +0200
+Date: Wed, 5 Aug 2026 18:36:55 +0200
 Subject: [PATCH] add drm lease functions
 
 ---
- .../gamescope-session-plus/gamescope-session-plus      | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ .../gamescope-session-plus/gamescope-session-plus    | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
 diff --git a/usr/share/gamescope-session-plus/gamescope-session-plus b/usr/share/gamescope-session-plus/gamescope-session-plus
-index 8a89c01..d2de9d4 100755
+index 8a89c01..41843df 100755
 --- a/usr/share/gamescope-session-plus/gamescope-session-plus
 +++ b/usr/share/gamescope-session-plus/gamescope-session-plus
 @@ -237,6 +237,16 @@ if [ -z "$GAMESCOPECMD" ]; then
@@ -28,6 +28,15 @@ index 8a89c01..d2de9d4 100755
  	HDR_OPTIONS=""
  	if [ "$ENABLE_GAMESCOPE_HDR" == "1" ] && [ "$ENABLE_GAMESCOPE_WSI" == "1" ] && gamescope_has_option "--hdr-enabled" && gamescope_has_option "--hdr-itm-enable"; then
  		HDR_OPTIONS="--hdr-enabled --hdr-itm-enable"
+@@ -263,6 +273,8 @@ if [ -z "$GAMESCOPECMD" ]; then
+ 		$HDR_OPTIONS \
+ 		$MAX_SCALE_OPTION \
+ 		$FAKE_OUTPUT_MM_OPTION \
++		$LEASE_CONNECTOR_OPTION \
++		$IGNORE_TOUCH_DEVICE_OPTION \
+ 		--prefer-output $OUTPUT_CONNECTOR \
+ 		--xwayland-count $XWAYLAND_COUNT \
+ 		--default-touch-mode $TOUCH_MODE \
 -- 
 2.55.0
 

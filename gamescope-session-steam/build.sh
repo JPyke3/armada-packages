@@ -72,6 +72,7 @@ EOF
       -e "/^Release:/s/%?dist/.${TIMESTAMP}%{?dist}.armada/" \
       -e "/^%build$/i %global build_cflags %{build_cflags} ${ARMADA_MARCH}" \
       -e "/^%build$/i %global build_cxxflags %{build_cxxflags} ${ARMADA_MARCH}" \
+      -e "s/^Requires:       steam\>/#Requires:       steam/" \
       -e "s/^%autosetup\>/%autosetup -p1/" \
       "${SPEC}"
 
