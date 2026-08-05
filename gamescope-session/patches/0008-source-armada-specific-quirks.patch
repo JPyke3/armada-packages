@@ -16,8 +16,8 @@ index 73564da..8a89c01 100755
  fi
  
 +# Source Armada device quirks if exists
-+if [ -f /usr/share/armada/device-quirks ]; then
-+	. /usr/share/armada/device-quirks
++if [ -f /usr/libexec/armada/device-env ]; then
++	. /usr/share/armada/device-env
 +fi
 +
  # Source client app specific configuration files

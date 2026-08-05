@@ -49,7 +49,7 @@ EOF
     )
 
     INSERT_LINE="$(
-      grep -n -m1 "^BuildRequires:" "${SPEC}" |
+      grep -n -m1 "BuildArch:" "${SPEC}" |
         cut -d: -f1
     )"
 
