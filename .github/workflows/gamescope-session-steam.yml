@@ -1,4 +1,4 @@
-name: gamescope-session
+name: gamescope-session-steam
 on:
   push:
     branches: [main]
