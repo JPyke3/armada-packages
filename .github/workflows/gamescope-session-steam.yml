@@ -2,7 +2,7 @@ name: gamescope-session-steam
 on:
   push:
     branches: [main]
-    paths: ['gamescope-session-steam/**', 'oci/**', '.github/workflows/gamescope-session-steam.yml', '.github/workflows/_package-image.yml', 'toolchain.env']
+    paths: ['gamescope-session-steam/**', 'oci/**', '.github/workflows/gamescope-session-steam.yml', '.github/workflows/_package-image.yml', 'toolchain.env', 'TERRA.env']
   workflow_dispatch:
 permissions:
   contents: read
