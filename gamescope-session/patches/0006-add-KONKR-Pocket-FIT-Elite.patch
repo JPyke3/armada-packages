@@ -11,11 +11,11 @@ diff --git a/usr/share/gamescope-session-plus/device-quirks b/usr/share/gamescop
 index 182afec..d5e6eb0 100644
 --- a/usr/share/gamescope-session-plus/device-quirks
 +++ b/usr/share/gamescope-session-plus/device-quirks
-@@ -317,6 +317,15 @@ if [[ ":AYN Thor:" =~ ":SYS_ID:"]]; then
+@@ -317,6 +317,15 @@ if [[ ":AYN Thor:" =~ ":$SYS_ID:" ]]; then
    export STEAM_DISPLAY_REFRESH_LIMITS=60,120
  fi
  
-+if [[ ":KONKR Pocket FIT Elite:" =~ ":SYS_ID:"]]; then
++if [[ ":KONKR Pocket FIT Elite:" =~ ":$SYS_ID:" ]]; then
 +  ORIENTATION=right
 +  OUTPUT_CONNECTOR='*,DSI-1'
 +  CUSTOM_REFRESH_RATES=60,90,120,144
@@ -24,7 +24,7 @@ index 182afec..d5e6eb0 100644
 +  export STEAM_DISPLAY_REFRESH_LIMITS=60,90,120,144
 +fi
 +
- if [[ ":KONKR Pocket FIT:" =~ ":SYS_ID:"]]; then
+ if [[ ":KONKR Pocket FIT:" =~ ":$SYS_ID:" ]]; then
    ORIENTATION=right
    CUSTOM_REFRESH_RATES=144
 -- 
