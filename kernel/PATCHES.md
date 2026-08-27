@@ -18,10 +18,6 @@ no equivalent submission was found, or a permanent URL to the upstream submissio
 - `patches/0048-drm-msm-dsi-reparent-byte-pixel-src-to-xo-on-disable.patch`
   source: https://github.com/ROCKNIX/distribution/blob/bcf3b5bc574990b96543484575b06f912153a715/projects/ROCKNIX/devices/SM8750/patches/linux/0048-drm-msm-dsi-reparent-byte-pixel-src-to-xo-on-disable.patch
   upstream: unknown
-- `patches/0049-drm-msm-dpu-panel-opt-in-8bpc-dither.patch`
-  source: armada
-  upstream: local
-  notes: Armada wrote this patch; it has not been submitted upstream.
 - `patches/0016-rp5-smooth-brightness-adjustment.patch`
   source: https://github.com/ROCKNIX/distribution/blob/bcf3b5bc574990b96543484575b06f912153a715/projects/ROCKNIX/devices/SM8250/patches/linux/0016-rp5-smooth-brightness-adjustment.patch
   upstream: unknown
@@ -526,9 +522,6 @@ no equivalent submission was found, or a permanent URL to the upstream submissio
 - `dts/cq8725s-ayn-odin3.dts`
   source: https://github.com/ROCKNIX/distribution/blob/bcf3b5bc574990b96543484575b06f912153a715/projects/ROCKNIX/devices/SM8750/patches/linux/0047-arm64-dts-qcom-Add-AYN-Odin3.patch
   notes: Armada extracted this DTS from the cited ROCKNIX patch and then applied later ROCKNIX DTS updates.
-- `dts/cq8725s-ayn-odin3.dts.patch`
-  source: armada
-  notes: Armada enables DPU dithering after copying `dts/cq8725s-ayn-odin3.dts`.
 - `dts/cq8725s-ayn-common.dtsi.patch`
   source: armada
   notes: Armada keeps volume-up from waking the system, marks Odin 3's RSInput node as connected to the Qualcomm haptics device, and supplies the device's 1024 range and 70-count axis deadzone.
