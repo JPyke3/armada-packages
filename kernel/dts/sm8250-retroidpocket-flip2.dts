@@ -29,6 +29,13 @@
 	};
 };
 
+&mdss_dsi0 {
+	panel@0 {
+		compatible = "visionox,vtdr6130-flip2";
+		reset-gpios = <&tlmm 75 GPIO_ACTIVE_LOW>;
+	};
+};
+
 &apps_rsc {
 	regulators-1 {
 		vreg_l8c_1p8: ldo8 {

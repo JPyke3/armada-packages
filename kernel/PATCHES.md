@@ -61,6 +61,10 @@ no equivalent submission was found, or a permanent URL to the upstream submissio
   source: https://github.com/ROCKNIX/distribution/blob/bcf3b5bc574990b96543484575b06f912153a715/projects/ROCKNIX/devices/SM8550/patches/linux/0104-drm-panel-Add-Retroid-Pocket-6-panel.patch
   upstream: unknown
   notes: Ported to Linux 7.2's managed DRM panel allocator.
+- `patches/0104a-drm-panel-visionox-vtdr6130-add-flip2.patch`
+  source: https://github.com/armada-os/armada/issues/327
+  upstream: unknown
+  notes: Adds support for Visionox VTDR6130 panel revisions found in the Retroid Pocket Flip 2, derived from the affected device's live Android device tree. Reuses the Pocket 6 initialization sequence and DSC configuration with the Flip 2 regulator supplies.
 - `patches/0105-drm-panel-Add-Retroid-Pocket-Nova-panel.patch`
   source: https://github.com/ROCKNIX/distribution/blob/bcf3b5bc574990b96543484575b06f912153a715/projects/ROCKNIX/devices/SM8550/patches/linux/0105-drm-panel-Add-Retroid-Pocket-Nova-panel.patch
   upstream: unknown
