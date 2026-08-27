@@ -1,5 +1,5 @@
 From: Armada <noreply@armada.local>
-Subject: [PATCH] arm64: dts: qcom: thor: fix hall wake and touch orientation
+Subject: [PATCH] arm64: dts: qcom: thor: hall wake, touch orientation, DPU dithering
 
 --- a/arch/arm64/boot/dts/qcom/qcs8550-ayn-thor.dts
 +++ b/arch/arm64/boot/dts/qcom/qcs8550-ayn-thor.dts
@@ -11,7 +11,7 @@ Subject: [PATCH] arm64: dts: qcom: thor: fix hall wake and touch orientation
  #include "qcs8550-ayn-common.dtsi"
  
  / {
-@@ -30,13 +31,16 @@
+@@ -30,6 +31,8 @@
  
  	gpio-keys-lid {
  		compatible = "gpio-keys";
@@ -20,7 +20,7 @@ Subject: [PATCH] arm64: dts: qcom: thor: fix hall wake and touch orientation
  
  		hall-lid-sensor {
  			label = "Hall Lid Sensor";
- 			gpios = <&tlmm 17 GPIO_ACTIVE_LOW>;
+@@ -37,6 +40,7 @@
  			linux,input-type = <EV_SW>;
  			linux,code = <SW_LID>;
  			linux,can-disable;
@@ -28,7 +28,17 @@ Subject: [PATCH] arm64: dts: qcom: thor: fix hall wake and touch orientation
  			wakeup-source;
  		};
  	};
-@@ -275,8 +279,6 @@
+@@ -167,6 +171,9 @@
+ &display_panel {
+ 	compatible = "chipone,icna3520";
+ 
++	/* 8bpc DSI link; dither the DPU 10-bit downconvert to hide banding */
++	armada,dpu-8bpc-dither;
++
+ 	pinctrl-0 = <&dsi_s_rst_active>, <&dsi_s_te_active>;
+ 	pinctrl-1 = <&dsi_s_rst_suspend>, <&dsi_s_te_suspend>;
+ 	pinctrl-names = "default", "sleep";
+@@ -275,8 +282,6 @@
  
  		touchscreen-size-x = <1080>;
  		touchscreen-size-y = <1920>;
@@ -37,7 +47,7 @@ Subject: [PATCH] arm64: dts: qcom: thor: fix hall wake and touch orientation
  
  		label = "top_touchscreen";
  	};
-@@ -393,8 +395,6 @@
+@@ -393,8 +398,6 @@
  
  		touchscreen-size-x = <1080>;
  		touchscreen-size-y = <1240>;
@@ -46,10 +56,11 @@ Subject: [PATCH] arm64: dts: qcom: thor: fix hall wake and touch orientation
  
  		label = "bottom_touchscreen";
  
-@@ -452,6 +450,15 @@
+@@ -451,6 +454,15 @@
+ 		function = "gpio";
  		bias-pull-up;
  		output-disable;
- 	};
++	};
 +
 +	/* Open-drain hall output: with no pull-up the released (lid open)
 +	   level is undefined. */
@@ -58,7 +69,6 @@ Subject: [PATCH] arm64: dts: qcom: thor: fix hall wake and touch orientation
 +		function = "gpio";
 +		bias-pull-up;
 +		output-disable;
-+	};
+ 	};
  };
  
- &remoteproc_adsp {
