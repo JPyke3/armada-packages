@@ -7,7 +7,7 @@ stays None and HDR content channel-clips at the display white point,
 blowing out highlights. This fulfils the existing TODOs: derive the source
 range from the app's HDR metadata blob when the atoms are missing, derive
 the display range from the connector when that is missing too, and default
-the operator to hue-preserving MaxChan for synthesized metadata.
+the operator to the per-channel EETF for synthesized metadata.
 
 Mastering values are sanitized against the 10000 nit PQ ceiling before
 being trusted; titles are seen reporting sentinel values like 6.58e6 nits.
@@ -77,7 +77,7 @@ index c49b95f..7bbf46f 100644
  	tonemap_info_t hdrTonemapSourceMetadata = { 0 };
  
 diff --git a/src/steamcompmgr.cpp b/src/steamcompmgr.cpp
-index fab5160..21244e7 100644
+index fab5160..2c74605 100644
 --- a/src/steamcompmgr.cpp
 +++ b/src/steamcompmgr.cpp
 @@ -31,6 +31,7 @@
@@ -120,7 +120,7 @@ index fab5160..21244e7 100644
 +							tonemapping.eOperator,
 +							source.flWhitePointNits,
 +							destDisplay.flWhitePointNits ) )
-+							tonemapping.eOperator = ETonemapOperator_EETF2390_MaxChan;
++							tonemapping.eOperator = ETonemapOperator_EETF2390_Independent;
 +						tonemapping.eetf2390.init( source, destDisplay );
  					}
  					else
