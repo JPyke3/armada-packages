@@ -518,6 +518,9 @@ no equivalent submission was found, or a permanent URL to the upstream submissio
   notes: Support for Visionox display panel models
 - `dts/sm8250-retroidpocket-rp5.dts`
   source: https://github.com/ROCKNIX/distribution/blob/bcf3b5bc574990b96543484575b06f912153a715/projects/ROCKNIX/devices/SM8250/linux/dts/qcom/sm8250-retroidpocket-rp5.dts
+- `dts/sm8250-retroidpocket-rp5-visionox.dts`
+  source: armada
+  notes: Support for Visionox display panel models
 - `dts/sm8250-retroidpocket-rpmini.dts`
   source: https://github.com/ROCKNIX/distribution/blob/bcf3b5bc574990b96543484575b06f912153a715/projects/ROCKNIX/devices/SM8250/linux/dts/qcom/sm8250-retroidpocket-rpmini.dts
 - `dts/sm8250-retroidpocket-rpminiv2.dts`
