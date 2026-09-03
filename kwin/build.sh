@@ -50,6 +50,7 @@ EOF
     LAST=$(grep -nE "^(Patch|Source)[0-9]*:" "$SPEC" | tail -1 | cut -d: -f1)
     [ -n "$LAST" ] || { echo "ERROR: no Source/Patch line to anchor on"; exit 1; }
     sed -i "${LAST}a Patch9001: 0001-input-panel-allow-configuring-output-by-env.patch" "$SPEC"
+    sed -i "$((LAST + 1))a Patch9002: 0002-x11-windowed-select-touch-events.patch" "$SPEC"
 
     grep -qE "^[[:space:]]*%autosetup" "$SPEC" \
         || { echo "ERROR: kwin.spec does not auto-apply patches; adjust build.sh"; exit 1; }
