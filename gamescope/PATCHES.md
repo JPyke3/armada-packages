@@ -32,3 +32,5 @@ to a commit, or `armada` if it's original; a URL source with no `notes` is verba
   source: armada
 - `patches/0014-feat-drm-run-a-compositor-from-the-leased-output.patch`
   source: armada
+- `patches/0015-wlserver-always-swallow-ignored-touch-device.patch`
+  source: armada
