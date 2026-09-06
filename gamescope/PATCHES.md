@@ -34,3 +34,5 @@ to a commit, or `armada` if it's original; a URL source with no `notes` is verba
   source: armada
 - `patches/0015-wlserver-always-swallow-ignored-touch-device.patch`
   source: armada
+- `patches/0016-drm-blank-leased-connector-on-release.patch`
+  source: armada
