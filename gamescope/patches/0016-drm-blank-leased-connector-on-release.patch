@@ -138,7 +138,7 @@ index 5d7fc97..0c64eee 100644
  uint32_t drm_lease_connector_id();
 +void drm_lease_blank();
  
- enum class DrmLeaseTouchType : uint32_t
+ enum class DrmLeaseEventType : uint32_t
  {
 diff --git a/src/wlserver.cpp b/src/wlserver.cpp
 index b10b2b2..e223e4d 100644
