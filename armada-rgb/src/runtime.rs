@@ -127,6 +127,7 @@ mod tests {
         for model in [
             "AYN Odin 2 Portal",
             "AYN Thor",
+            "AYN Thor Lite",
             "AYN Odin 3",
             "KONKR Pocket FIT Elite",
             "Retroid Pocket 5",
